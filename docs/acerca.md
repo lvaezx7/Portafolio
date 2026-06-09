@@ -3,15 +3,7 @@ title: "Acerca de mí"
 description: "Luis Vaez Alvarez — Ingeniería de Sistemas, AI & Data Science"
 ---
 
-<!-- PAGE HERO -->
-<div class="page-hero reveal">
-  <p class="page-hero__eyebrow">Perfil profesional</p>
-  <h1 class="page-hero__title">Acerca de <span>mí</span></h1>
-  <p class="page-hero__sub">
-    Estudiante de Ingeniería de Sistemas con especialización en IA, ML y Data Science.
-    Orientado a resultados, trabajo en proyectos que van del notebook a producción.
-  </p>
-</div>
+<h1>Acerca de <span class="section-accent">mí</span></h1>
 
 <!-- PROFILE CARD -->
 <div class="profile-hero-v2 reveal">
@@ -206,11 +198,11 @@ Soy estudiante de **Ingeniería de Sistemas** con especialización en **AI & Dat
 ## Contacto { #contacto }
 
 <div class="contact-grid reveal">
-  <a class="contact-link" href="mailto:luis.vaezx@correo.ucu.edu.uy" aria-label="Enviar email">
+  <a class="contact-link" href="mailto:vaezzxcontact@gmail.com" aria-label="Enviar email">
     <span class="contact-link__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
     <span class="contact-link__info">
       <span class="contact-link__label">Email</span>
-      <span class="contact-link__value">luis.vaezx@correo.ucu.edu.uy</span>
+      <span class="contact-link__value">vaezzxcontact@gmail.com</span>
     </span>
   </a>
   <a class="contact-link" href="https://www.linkedin.com/in/luis-v%C3%A1ez-%C3%A1lvarez-514a5a357/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -227,7 +219,7 @@ Soy estudiante de **Ingeniería de Sistemas** con especialización en **AI & Dat
       <span class="contact-link__value">lvaezx7</span>
     </span>
   </a>
-  <a class="contact-link" href="../assets/VAEZ ALVAREZ LUIS- CV[1].pdf" target="_blank" rel="noopener" aria-label="Descargar CV">
+  <a class="contact-link" href="../assets/cv/CV_Luis_Vaez_Alvarez.pdf" target="_blank" rel="noopener" aria-label="Descargar CV">
     <span class="contact-link__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-5 3h8v2H8v-2zm0 4h8v2H8v-2z"/></svg></span>
     <span class="contact-link__info">
       <span class="contact-link__label">Currículum</span>

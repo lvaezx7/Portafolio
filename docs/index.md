@@ -47,7 +47,7 @@ description: "Portfolio de Luis Vaez Alvarez — AI & Data Science Engineer"
     <div class="hero-v2__actions">
       <a href="portfolio/" class="btn btn--primary">Explorar Portfolio →</a>
       <a href="acerca/" class="btn btn--secondary">Sobre mí</a>
-      <a href="assets/VAEZ ALVAREZ LUIS- CV[1].pdf" class="btn btn--outline" target="_blank" rel="noopener">Descargar CV</a>
+      <a href="assets/cv/CV_Luis_Vaez_Alvarez.pdf" class="btn btn--outline" target="_blank" rel="noopener">Descargar CV</a>
     </div>
 
     <div class="hero-v2__stats" role="list">
@@ -124,7 +124,7 @@ description: "Portfolio de Luis Vaez Alvarez — AI & Data Science Engineer"
       <span class="contact-link__value">lvaezx7</span>
     </span>
   </a>
-  <a class="contact-link" href="assets/VAEZ ALVAREZ LUIS- CV[1].pdf" target="_blank" rel="noopener" aria-label="Descargar CV">
+  <a class="contact-link" href="assets/cv/CV_Luis_Vaez_Alvarez.pdf" target="_blank" rel="noopener" aria-label="Descargar CV">
     <span class="contact-link__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-5 3h8v2H8v-2zm0 4h8v2H8v-2z"/></svg></span>
     <span class="contact-link__info">
       <span class="contact-link__label">Currículum</span>
