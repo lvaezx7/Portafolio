@@ -103,11 +103,11 @@ description: "Portfolio de Luis Vaez Alvarez — AI & Data Science Engineer"
 <div class="section-divider">Contacto</div>
 
 <div class="contact-grid reveal">
-  <a class="contact-link" href="mailto:luis.vaezx@correo.ucu.edu.uy" aria-label="Enviar email">
+  <a class="contact-link" href="mailto:vaezzxcontact@gmail.com" aria-label="Enviar email">
     <span class="contact-link__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
     <span class="contact-link__info">
       <span class="contact-link__label">Email</span>
-      <span class="contact-link__value">luis.vaezx@correo.ucu.edu.uy</span>
+      <span class="contact-link__value">vaezzxcontact@gmail.com</span>
     </span>
   </a>
   <a class="contact-link" href="https://www.linkedin.com/in/luis-v%C3%A1ez-%C3%A1lvarez-514a5a357/" target="_blank" rel="noopener" aria-label="LinkedIn">

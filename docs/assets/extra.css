@@ -1518,57 +1518,200 @@ a.open-btn:hover,
 }
 
 /* --------------------------------------------------------------------------
-   15. DOMAIN HEADERS (PORTFOLIO) — flat, no side-stripe
+   15. PORTFOLIO HERO CARD — only on portfolio page
    -------------------------------------------------------------------------- */
 
-.domain-header {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  padding: 0.75rem 0;
-  margin: 2.8rem 0 1.1rem;
-  border-bottom: 1px solid var(--clr-border);
+.portfolio-hero-card {
+  background: linear-gradient(135deg, rgba(10,16,30,0.92), rgba(5,10,22,0.97));
+  border: 1px solid rgba(34,211,238,0.14);
+  border-radius: var(--r-lg);
+  padding: 2.5rem 2.5rem 2rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.domain-header__icon {
-  font-size: 1.3rem;
-  flex-shrink: 0;
-  opacity: 0.9;
+.portfolio-hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(34,211,238,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(56,189,248,0.03) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.domain-header__content {
-  flex: 1;
+.portfolio-hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent), transparent);
 }
 
-.domain-header__label {
-  /* Removed — was tiny uppercase eyebrow on every section (slop tell) */
-  display: none;
-}
-
-.domain-header__title {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--clr-text);
-  line-height: 1.35;
-}
-
-.domain-header__count {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 28px;
-  height: 22px;
-  padding: 0 0.5rem;
-  border-radius: var(--r-full);
-  background: rgba(34, 211, 238, 0.08);
-  border: 1px solid rgba(34, 211, 238, 0.22);
+.portfolio-hero-card__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
   color: var(--clr-primary);
-  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.75rem;
+  opacity: 0.85;
+}
+
+.portfolio-hero-card__title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin: 0 0 1rem !important;
+  color: var(--clr-text) !important;
+  text-transform: none !important;
+  letter-spacing: -0.01em !important;
+}
+
+.portfolio-hero-card__title span {
+  color: var(--clr-primary);
+}
+
+.portfolio-hero-card__desc {
+  font-size: 0.93rem;
+  color: var(--clr-text-2);
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 0 2rem;
+}
+
+.portfolio-hero-card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.phc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem 1.2rem;
+  background: rgba(34,211,238,0.04);
+  border: 1px solid rgba(34,211,238,0.12);
+  border-radius: var(--r-md);
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+.phc-stat:hover {
+  background: rgba(34,211,238,0.09);
+  border-color: rgba(34,211,238,0.28);
+  transform: translateY(-3px);
+}
+
+.phc-stat__num {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--clr-primary);
+  line-height: 1;
+}
+
+.phc-stat__label {
+  font-size: 0.68rem;
+  color: var(--clr-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-top: 0.3rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   15b. DOMAIN NAV — pill anchor links
+   -------------------------------------------------------------------------- */
+
+.domain-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.domain-nav__btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--clr-text-2) !important;
+  text-decoration: none !important;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+  background: transparent;
+}
+
+.domain-nav__btn:hover {
+  background: rgba(34,211,238,0.07);
+  border-color: rgba(34,211,238,0.35);
+  color: var(--clr-primary) !important;
+}
+
+/* --------------------------------------------------------------------------
+   15c. DOMAIN SECTION HEADERS — centered, architectural, no emoji
+   -------------------------------------------------------------------------- */
+
+.domain-section {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  margin: 0;
+  position: relative;
+}
+
+.domain-section__number {
+  font-family: var(--font-display);
   font-size: 0.7rem;
   font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--clr-primary);
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+  opacity: 0.8;
 }
+
+.domain-section__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  font-weight: 800;
+  color: var(--clr-text);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.domain-section__sub {
+  font-size: 0.78rem;
+  color: var(--clr-text-3);
+  letter-spacing: 0.04em;
+  margin: 0 0 1.1rem;
+}
+
+.domain-section__count {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.85rem;
+  background: rgba(34,211,238,0.06);
+  border: 1px solid rgba(34,211,238,0.16);
+  border-radius: var(--r-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  letter-spacing: 0.06em;
+  font-family: var(--font-mono);
+}
+
+/* Keep old domain-header hidden since it's no longer used */
+.domain-header { display: none; }
 
 /* Description text between domain header and cards grid */
 .domain-desc {
@@ -1876,7 +2019,8 @@ a.open-btn:hover,
 /* Prevent hero h1/h2 from getting typeset overrides */
 .md-typeset .hero-v2 h1,
 .md-typeset .hero-v2 h2,
-.md-typeset .page-hero h2 {
+.md-typeset .page-hero h2,
+.md-typeset .portfolio-hero-card h1 {
   text-align: inherit;
   text-transform: inherit;
   letter-spacing: inherit;
@@ -1886,8 +2030,15 @@ a.open-btn:hover,
 }
 
 .md-typeset .hero-v2 h2::after,
-.md-typeset .page-hero h2::after {
+.md-typeset .page-hero h2::after,
+.md-typeset .portfolio-hero-card h1::after {
   display: none;
+}
+
+/* domain-section p — reset .md-typeset margin interference */
+.md-typeset .domain-section p {
+  margin: 0;
+  padding: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -1947,6 +2098,31 @@ a.open-btn:hover,
 
   .domain-header {
     flex-wrap: wrap;
+  }
+
+  .portfolio-hero-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  .portfolio-hero-card__stats {
+    gap: 0.5rem;
+  }
+
+  .phc-stat {
+    min-width: 65px;
+    padding: 0.55rem 0.85rem;
+  }
+
+  .phc-stat__num {
+    font-size: 1.4rem;
+  }
+
+  .domain-nav {
+    gap: 0.4rem;
+  }
+
+  .domain-section {
+    padding: 2.5rem 0 1.5rem;
   }
 
   .domain-header__count {
