@@ -51,17 +51,6 @@ hide:
 </div>
 
 <!-- ================================================================
-     DOMAIN NAV — saltos rápidos a cada sección
-     ================================================================ -->
-<div class="domain-nav reveal">
-  <a class="domain-nav__btn" href="#domain-01">ML Clásico</a>
-  <a class="domain-nav__btn" href="#domain-02">Deep Learning</a>
-  <a class="domain-nav__btn" href="#domain-03">Computer Vision</a>
-  <a class="domain-nav__btn" href="#domain-04">NLP & LLMs</a>
-  <a class="domain-nav__btn" href="#domain-05">MLOps</a>
-</div>
-
-<!-- ================================================================
      DOMAIN 1: MACHINE LEARNING CLÁSICO
      ================================================================ -->
 
