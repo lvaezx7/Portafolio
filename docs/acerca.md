@@ -7,9 +7,6 @@ description: "Luis Vaez Alvarez — Ingeniería de Sistemas, AI & Data Science"
 
 <!-- PROFILE CARD -->
 <div class="profile-hero-v2 reveal">
-  <div class="profile-hero-v2__img">
-    <img src="../assets/acerca/luis.png" alt="Foto de perfil de Luis Vaez" loading="lazy">
-  </div>
   <div class="profile-hero-v2__content">
     <h2>Luis Vaez Alvarez</h2>
     <p class="profile-role">Ingeniería de Sistemas · UCU · 2025</p>
@@ -20,6 +17,9 @@ description: "Luis Vaez Alvarez — Ingeniería de Sistemas, AI & Data Science"
       <a class="btn btn--primary" href="../portfolio/">Ver Portfolio →</a>
       <a class="btn btn--secondary" href="#contacto">Contactarme</a>
     </div>
+  </div>
+  <div class="profile-hero-v2__portrait">
+    <img src="../assets/luis_nobg.png" alt="Luis Vaez Alvarez" loading="lazy">
   </div>
 </div>
 

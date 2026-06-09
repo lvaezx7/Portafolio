@@ -2,6 +2,6 @@
 cd /d "C:\Luis Vaez\PortafolioLuisVaez-IA-main"
 if exist .git\index.lock del /f .git\index.lock
 git add -A
-git commit -m "fix: remove duplicate domain nav pills from portfolio page"
+git commit -m "feat: about page — portrait right, no circle photo, fade blend + glow"
 git push
-del /f go2.bat
+del /f go3.bat
