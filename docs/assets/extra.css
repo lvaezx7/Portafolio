@@ -1136,7 +1136,7 @@ a.open-btn:hover,
 
 .profile-hero-v2 {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr clamp(260px, 32vw, 400px);
   gap: 0;
   align-items: stretch;
   background: var(--clr-surface);
@@ -1147,24 +1147,24 @@ a.open-btn:hover,
   box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
-  min-height: 260px;
+  min-height: 300px;
 }
 
-/* Cyan ambient glow behind the portrait area */
+/* Cyan ambient glow centered on portrait column */
 .profile-hero-v2::after {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
-  width: 55%;
+  width: 50%;
   height: 100%;
-  background: radial-gradient(ellipse at 80% 50%, rgba(34, 211, 238, 0.13), transparent 70%);
+  background: radial-gradient(ellipse at 70% 40%, rgba(34, 211, 238, 0.11), transparent 65%);
   pointer-events: none;
 }
 
-/* Left column — all the text content */
+/* Left column — text content */
 .profile-hero-v2__content {
-  padding: 2.5rem 2rem 2.5rem 2.5rem;
+  padding: 2.75rem 2rem 2.75rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1175,31 +1175,32 @@ a.open-btn:hover,
 /* Right column — portrait */
 .profile-hero-v2__portrait {
   position: relative;
-  width: clamp(180px, 24vw, 300px);
   overflow: hidden;
-  flex-shrink: 0;
 }
 
-/* Left-side fade so portrait blends into the card */
+/* Fade: left edge blends into card, bottom edge softens */
 .profile-hero-v2__portrait::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--clr-surface) 0%, transparent 38%);
+  background:
+    linear-gradient(to right,  var(--clr-surface) 0%, transparent 30%),
+    linear-gradient(to top,    var(--clr-surface) 0%, transparent 12%);
   z-index: 2;
   pointer-events: none;
 }
 
 .profile-hero-v2__portrait img {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 110%;
+  bottom: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 108%;
   width: auto;
   max-width: none;
   object-fit: contain;
-  object-position: bottom right;
-  filter: drop-shadow(-12px 0 28px rgba(34, 211, 238, 0.18));
+  object-position: bottom center;
+  filter: drop-shadow(-8px 0 24px rgba(34, 211, 238, 0.15)) drop-shadow(0 -4px 20px rgba(0,0,0,0.5));
   display: block;
 }
 
