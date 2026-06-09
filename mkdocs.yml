@@ -1,47 +1,57 @@
-site_name: Luis Vaez Portafolio
-site_description: Portfolio personal de proyectos 
-site_url: https://vaezgaming1-afk.github.io/PortafolioLuisVaez-IA/
-repo_url: https://github.com/vaezgaming1-afk/PortafolioLuisVaez-IA
-
+site_name: Luis Vaez · AI Portfolio
+site_description: Portfolio de AI & Data Science — Machine Learning, Deep Learning, Computer Vision, NLP y MLOps
+site_url: https://lvaezx7.github.io/Portafolio/
+repo_url: https://github.com/lvaezx7/Portafolio
 repo_name: ia-portfolio
 site_dir: site
+docs_dir: docs
 
 theme:
   name: material
   language: es
   logo: assets/logo.svg
   favicon: assets/logo.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.instant
+    - navigation.instant.prefetch
     - navigation.sections
-    - navigation.tabs 
+    - navigation.tabs
     - navigation.indexes
     - navigation.top
     - toc.integrate
     - content.code.copy
+    - search.highlight
+    - search.suggest
   palette:
-        - scheme: default
-          primary: custom
-          accent: custom
-          toggle:
-            icon: material/weather-night
-            name: Modo oscuro
-        - scheme: slate
-          primary: custom
-          accent: custom
-          toggle:
-            icon: material/white-balance-sunny
-            name: Modo claro
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+
 extra_css:
   - assets/extra.css
 
+extra_javascript:
+  - assets/extra.js
 
 plugins:
   - search
   - awesome-pages
-  - macros 
+  - macros
   - git-revision-date-localized:
       enable_git_follow: false
+      fallback_to_build_date: true
 
 markdown_extensions:
   - admonition
@@ -55,92 +65,84 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.tasklist:
-      custom_checkbox: true         # dibuja los checkboxes bonitos
-      clickable_checkbox: true      # opcional: permite clicarlos (no persiste)
-
-
+      custom_checkbox: true
+      clickable_checkbox: true
 
 edit_uri: blob/main/docs/
-
-extra_css:
-  - assets/extra.css
 
 nav:
   - Inicio: index.md
   - "Acerca de mí": acerca.md
   - Portfolio:
       - Índice: portfolio/index.md
-      - 'Publicación': 'portfolio/1Publicacion.md'
-      
-      - "01 — EDA del Titanic...":
-          - 'Práctica 1 (Principal)': 'portfolio/Practica1.md'
-          - 'Práctica 1.2': 'portfolio/Practica1.2.md'
-          - 'Práctica 1.3': 'portfolio/Practica1.3.md'
+      - 'Publicación del sitio': 'portfolio/1Publicacion.md'
 
-      - "02 — Feature Engineering...":
-          - 'Práctica 2 (Principal)': 'portfolio/Practica2.md'
-          - 'Práctica 2.1': 'portfolio/Practica2.1.md'
-          - 'Práctica 2.2': 'portfolio/Practica2.2.md'
+      - "01 · ML — EDA & Análisis":
+          - 'Análisis Titanic (Principal)': 'portfolio/Practica1.md'
+          - 'Palmer Penguins': 'portfolio/Practica1.2.md'
+          - 'Tips Dataset — Negocio': 'portfolio/Practica1.3.md'
 
-      - "03 — Regresión Lineal...":
-          - 'Práctica 4 (Principal)': 'portfolio/Practica4.md'
-          - 'Práctica 4.1': 'portfolio/Practica4.1.md'
-          - 'Práctica 4.2': 'portfolio/Practica4.2.md'
+      - "02 · ML — Feature Engineering":
+          - 'Ingeniería de Características (Principal)': 'portfolio/Practica2.md'
+          - 'Detector de Lujo': 'portfolio/Practica2.1.md'
+          - 'Oráculo de California': 'portfolio/Practica2.2.md'
 
-      - "04 — Validación y Selección...":
-          - 'Práctica 5 (Principal)': 'portfolio/Practica5.md'
-          - 'Práctica 5.1': 'portfolio/Practica5.1.md'
-          - 'Práctica 5.2': 'portfolio/Practica5.2.md'
+      - "03 · ML — Regresión & Clasificación":
+          - 'Regresión Lineal y Logística (Principal)': 'portfolio/Practica4.md'
+          - 'Campañas Publicitarias': 'portfolio/Practica4.1.md'
+          - 'Diagnóstico Cáncer de Mama': 'portfolio/Practica4.2.md'
 
-      - "05 — Clustering y PCA...":
-          - 'Práctica 6 (Principal)': 'portfolio/Practica6.md'
-          - 'Práctica 6.1': 'portfolio/Practica6.1.md'
-          - 'Práctica 6.2': 'portfolio/Practica6.2.md'
-          
-      - "Práctica 7": 
-          - 'Práctica 7 (Principal)': 'portfolio/Practica7.md'
-          - 'Práctica 7.1': 'portfolio/Practica7.1.md'
-          - 'Práctica 7.2': 'portfolio/Practica7.2.md'
-      
-      - "Práctica 8":
-          - 'Práctica 8 (Principal)': 'portfolio/Practica8.md'
-          - 'Práctica 8.1': 'portfolio/Practica8.1.md'
-          - 'Práctica 8.2': 'portfolio/Practica8.2.md'
+      - "04 · ML — Validación & Selección":
+          - 'Cross-Validation (Principal)': 'portfolio/Practica5.md'
+          - 'Predicción Notas Secundaria': 'portfolio/Practica5.1.md'
+          - 'Telco Churn Detection': 'portfolio/Practica5.2.md'
 
-      - "Práctica 9":
-          - 'Práctica 9 (Principal)': 'portfolio/Practica9.md'
-          - 'Práctica 9.1': 'portfolio/Practica9.1.md'
+      - "05 · ML — Clustering & PCA":
+          - 'K-Means & PCA (Principal)': 'portfolio/Practica6.md'
+          - 'Perfiles de Vinos': 'portfolio/Practica6.1.md'
+          - 'Análisis de Personalidad': 'portfolio/Practica6.2.md'
 
-      - "Práctica 10":
-          - 'Práctica 10 (Principal)': 'portfolio/Practica10.md'
-          - 'Práctica 10.1': 'portfolio/Practica10.1.md'
+      - "06 · Deep Learning — Redes Neuronales":
+          - 'MLP & Activaciones (Principal)': 'portfolio/Practica7.md'
+          - 'Reconocimiento MNIST': 'portfolio/Practica7.1.md'
+          - 'Fashion-MNIST': 'portfolio/Practica7.2.md'
 
-      - "Práctica 11":
-          - 'Práctica 11 (Principal)': 'portfolio/Practica11.md'
-          - 'Práctica 11.1': 'portfolio/Practica11.1.md'
+      - "07 · Deep Learning — Backprop & Optimización":
+          - 'CIFAR-10 & TensorBoard (Principal)': 'portfolio/Practica8.md'
+          - 'CIFAR-100 Dataset': 'portfolio/Practica8.1.md'
+          - 'Sentimiento IMDB': 'portfolio/Practica8.2.md'
 
-      - "Práctica 12":
-          - 'Práctica 12 (Principal)': 'portfolio/Practica12.md'
-          - 'Práctica 12.1': 'portfolio/Practica12.1.md'
+      - "08 · Computer Vision — CNN & Transfer Learning":
+          - 'CIFAR-10 Fine-tuning (Principal)': 'portfolio/Practica9.md'
+          - 'Food-101 CNN': 'portfolio/Practica9.1.md'
 
-      - "Práctica 13":
-          - 'Práctica 13 (Principal)': 'portfolio/Practica13.md'
-          - 'Práctica 13.1': 'portfolio/Practica13.1.md'
+      - "09 · Computer Vision — Explicabilidad":
+          - 'Flowers102 & GradCAM (Principal)': 'portfolio/Practica10.md'
+          - 'Oxford-IIIT Pet': 'portfolio/Practica10.1.md'
 
-      - "Práctica 14":
-          - 'Práctica 14 (Principal)': 'portfolio/Practica14.md'
-          - 'Práctica 14.1': 'portfolio/Practica14.1.md'
+      - "10 · Computer Vision — YOLO & Tracking":
+          - 'YOLOv8 Multi-Object Tracking (Principal)': 'portfolio/Practica11.md'
+          - 'Detección Vehículos': 'portfolio/Practica11.1.md'
 
-      - "Práctica 15":
-          - 'Práctica 15 (Principal)': 'portfolio/Practica15.md'
-          - 'Práctica 15.1': 'portfolio/Practica15.1.md'          
- 
-      - "Práctica 16":
-          - 'Práctica 16 (Principal)': 'portfolio/Practica16.md'
-       
+      - "11 · Computer Vision — Segmentación SAM":
+          - 'SAM Fine-tuning Inundaciones (Principal)': 'portfolio/Practica12.md'
+          - 'Segmentación Urbana Aérea': 'portfolio/Practica12.1.md'
+
+      - "12 · NLP — Transformers & Sentimiento":
+          - 'Sentimiento Financiero (Principal)': 'portfolio/Practica13.md'
+          - 'Detección Toxicidad OffendES': 'portfolio/Practica13.1.md'
+
+      - "13 · NLP — LLMs & LangChain":
+          - 'Apps con LangChain & OpenAI (Principal)': 'portfolio/Practica14.md'
+          - 'Asistente RAG LangChain': 'portfolio/Practica14.1.md'
+
+      - "14 · NLP — Agentes con LangGraph":
+          - 'Agentes Inteligentes (Principal)': 'portfolio/Practica15.md'
+          - 'Agente E-commerce': 'portfolio/Practica15.1.md'
+
+      - "15 · MLOps — ML en Producción":
+          - 'Notebook → Vertex AI (Principal)': 'portfolio/Practica16.md'
+
       - 'Plantilla': 'portfolio/plantilla.md'
-      
-  - Recursos: recursos.md
-  
-docs_dir: docs
 
+  - Recursos: recursos.md

@@ -1,0 +1,1026 @@
+/* ============================================================================
+   DISEÑO FINAL MEJORADO (ELEGANTE + FUNCIONAL + MODO OSCURO + MÁS LLAMATIVO)
+   ========================================================================== */
+
+/* ---------- MODO CLARO (scheme: default) ---------------------------------- */
+:root {
+  color-scheme: light dark; /* pista al navegador */
+  --md-primary-fg-color:        #4A7CA6;
+  --md-primary-fg-color--light: #6FA7D9;
+  --md-primary-fg-color--dark:  #1C2226;
+  --md-accent-fg-color:         #A0C1E6;
+
+  --surface-1: #F5F8FB;
+  --surface-2: #FFFFFF;
+  --surface-3: #EAF1F7;
+  --border-1: rgba(49, 66, 89, .14);
+  --shadow-1: rgba(0, 0, 0, .10);
+  --text-1: #1E2933;
+  --text-2: #4A7CA6;
+  --pill-bg: rgba(74, 124, 166, .08);
+
+  --glow-primary: rgba(160, 193, 230, .55);
+  --radius-card: 18px;
+
+  --font-primary: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Arial', sans-serif;
+  --md-logo-height: 26px;
+}
+
+/* ---------- MODO OSCURO (scheme: slate) ----------------------------------- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #6FA7D9;
+  --md-primary-fg-color--light: #8CBFEA;
+  --md-primary-fg-color--dark:  #0B0F12;
+  --md-accent-fg-color:         #A0C1E6;
+
+  --surface-1: #11151A;
+  --surface-2: #171D23;
+  --surface-3: #222B33;
+  --border-1: rgba(160, 193, 230, .18);
+  --shadow-1: rgba(0, 0, 0, .6);
+  --text-1: #EEF3F7;
+  --text-2: rgba(193, 194, 198, .8);
+  --pill-bg: rgba(160, 193, 230, .12);
+
+  --glow-primary: rgba(111, 167, 217, .5);
+}
+
+/* ---------- RESET + TRANSICIONES ----------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a,
+button,
+.card,
+.x-card,
+.pill,
+.profile-hero,
+.profile-hero img,
+.hero-banner.minimal {
+  transition:
+    color .3s cubic-bezier(.25,.8,.25,1),
+    background-color .3s cubic-bezier(.25,.8,.25,1),
+    border-color .3s cubic-bezier(.25,.8,.25,1),
+    box-shadow .3s cubic-bezier(.25,.8,.25,1),
+    transform .25s cubic-bezier(.25,.8,.25,1),
+    opacity .25s cubic-bezier(.25,.8,.25,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- TIPOGRAFÍA GLOBAL -------------------------------------------- */
+.md-content,
+.md-typeset {
+  font-family: var(--font-primary);
+}
+
+/* ---------- BOTÓN PRIMARIO GENERAL -------------------------------------- */
+a.md-button.md-button--primary {
+  background: radial-gradient(circle at 0 0,
+    rgba(255,255,255,.3),
+    transparent 55%
+  ),
+  linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--light));
+  border: 0;
+  color: #fff;
+  padding: .6rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, .16), 0 0 0 1px rgba(255,255,255,.06);
+  transform: translateY(0);
+}
+
+a.md-button.md-button--primary::after {
+  content: "↗";
+  font-size: .85em;
+  opacity: .9;
+}
+
+a.md-button.md-button--primary:hover {
+  background:
+    radial-gradient(circle at 100% 0, rgba(255,255,255,.4), transparent 55%),
+    linear-gradient(135deg, var(--md-primary-fg-color--light), var(--md-accent-fg-color));
+  box-shadow:
+    0 8px 22px var(--shadow-1),
+    0 0 16px var(--glow-primary);
+  transform: translateY(-3px);
+}
+
+a.md-button.md-button--primary:active {
+  transform: translateY(-1px) scale(.99);
+}
+
+/* ---------- FOCUS ACCESIBLE --------------------------------------------- */
+a.md-button.md-button--primary:focus-visible,
+.card a.open-btn:focus-visible,
+.x-card a.open-btn:focus-visible,
+.pill:focus-visible {
+  outline: 3px solid var(--md-accent-fg-color);
+  outline-offset: 3px;
+}
+
+/* ---------- BOTÓN “ABRIR” EN TARJETAS ----------------------------------- */
+.card a.open-btn,
+.x-card a.open-btn {
+  display: inline-block;
+  margin-top: .2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  color: #fff;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: .35rem 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, .18);
+  transform: translateY(0);
+  font-size: .88rem;
+  white-space: nowrap;
+}
+
+.card a.open-btn:hover,
+.x-card a.open-btn:hover {
+  background: linear-gradient(135deg, var(--md-accent-fg-color), var(--md-primary-fg-color--light));
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, .24),
+    0 0 10px var(--glow-primary);
+}
+
+/* ---------- TARJETAS Y GRIDS -------------------------------------------- */
+.x-cards-grid,
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.6rem;
+  margin: 0 auto 2rem;
+}
+
+.x-card,
+.cards-grid .card {
+  position: relative;
+  display: flex;              /* NUEVO: layout en columna */
+  flex-direction: column;     /* NUEVO */
+  background: linear-gradient(180deg, var(--surface-2), var(--surface-1));
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.25rem 1.1rem;
+  box-shadow: 0 7px 18px var(--shadow-1);
+  border: 1px solid var(--border-1);
+  overflow: hidden;
+}
+
+
+/* Halo/contorno de luz en hover */
+.x-card::before,
+.cards-grid .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(130deg,
+    rgba(255,255,255,.16),
+    var(--glow-primary),
+    rgba(255,255,255,0)
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+.x-card:hover::before,
+.cards-grid .card:hover::before {
+  opacity: 1;
+}
+
+.x-card:hover,
+.cards-grid .card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(160,193,230,.45);
+  box-shadow:
+    0 14px 26px var(--shadow-1),
+    0 0 14px var(--glow-primary);
+}
+
+/* Títulos dentro de cards */
+.cards-grid .card h3,
+.x-card h3 {
+  font-size: 1.02rem;
+  margin-top: .15rem;
+  margin-bottom: .45rem;
+  color: var(--md-primary-fg-color--dark);
+  letter-spacing: .02em;
+}
+
+[data-md-color-scheme="slate"] .cards-grid .card h3,
+[data-md-color-scheme="slate"] .x-card h3 {
+  color: #f5f7fb;
+}
+
+/* Texto dentro de cards */
+.cards-grid .card p,
+.x-card p {
+  margin: 0;
+  font-size: .94rem;
+  color: var(--text-1);
+}
+
+.cards-grid .card p small,
+.x-card p small {
+  font-size: .8rem;
+}
+
+/* Imagen dentro de card */
+.x-card img,
+.cards-grid .card img {
+  display: block;
+  border-radius: 12px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  margin-bottom: .6rem;
+}
+
+/* ==== Acciones: pill + botón en una fila, sin cortes ==================== */
+.cards-grid .card p.actions,
+.x-card p.actions {
+  margin-top: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* pill a la izq, botón a la der */
+  gap: .55rem;
+  flex-wrap: nowrap;               /* no se apilan en desktop */
+}
+
+/* ---------- PILLS (ESTADO) ---------------------------------------------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;               /* un poco más compacto */
+  padding: .32rem .75rem;          /* menos ancho => entra mejor */
+  border-radius: 999px;
+  border: 1px solid var(--border-1);
+  background: radial-gradient(circle at 0 0, rgba(255,255,255,.7), transparent 55%),
+              linear-gradient(135deg, var(--pill-bg), transparent);
+  color: var(--text-1);
+  font-weight: 500;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pill::before {
+  content: "";
+  width: .5rem;
+  height: .5rem;
+  border-radius: 999px;
+  margin-right: .35rem;
+  background: radial-gradient(circle, #26c281, #1b9c5a);
+  box-shadow: 0 0 6px rgba(38,194,129,.65);
+}
+
+/* hover genérico */
+.pill:hover {
+  background: linear-gradient(135deg, #27ae60, #3ddc63);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 12px rgba(39,174,96,.55);
+}
+
+/* (Ojo: :contains no es estándar; si no se aplica, no pasa nada) */
+.pill:contains("En progreso")::before {
+  background: radial-gradient(circle, #f1c40f, #f39c12);
+  box-shadow: 0 0 6px rgba(243,156,18,.6);
+}
+
+/* ---------- PERFIL / HERO PERSONAL -------------------------------------- */
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background:
+    radial-gradient(circle at 0 0, rgba(160,193,230,.25), transparent 60%),
+    linear-gradient(145deg, var(--surface-2), var(--surface-1));
+  padding: 1.6rem 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-1);
+  box-shadow: 0 10px 22px var(--shadow-1);
+}
+
+.profile-hero img {
+  display: block;
+  border-radius: 50%;
+  width: clamp(160px, 18vw, 220px);
+  height: clamp(160px, 18vw, 220px);
+  border: 4px solid var(--md-primary-fg-color);
+  object-fit: cover;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.profile-hero img:hover {
+  transform: scale(1.05) translateY(-2px);
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 0 24px var(--glow-primary);
+}
+
+/* ---------- CAPTION ------------------------------------------------------ */
+.x-caption,
+.cards-grid.media .card .caption {
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-primary-fg-color--light));
+  color: #fff;
+  padding: .85rem 1rem;
+  font-family: var(--font-secondary);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .12);
+  font-size: .9rem;
+}
+
+/* ---------- RESPONSIVO --------------------------------------------------- */
+@media (max-width: 768px) {
+  .profile-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* En móviles muy estrechos, permitimos que se apilen si no entran */
+@media (max-width: 420px) {
+  .cards-grid .card p.actions,
+  .x-card p.actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: .4rem;
+  }
+}
+
+/* -----------------------------------------------------------
+   HERO BANNER — VERSIÓN MINIMALISTA Y ELEGANTE
+------------------------------------------------------------ */
+.hero-banner.minimal {
+  position: relative;
+  text-align: center;
+  background:
+    radial-gradient(circle at 10% 0, rgba(160,193,230,.35), transparent 55%),
+    radial-gradient(circle at 90% 0, rgba(255,255,255,.35), transparent 55%),
+    linear-gradient(180deg, var(--surface-1), var(--surface-2));
+  border-radius: 20px;
+  padding: 2.3rem 1.3rem 2.1rem;
+  margin-bottom: 2.2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .10);
+  border: 1px solid rgba(74,124,166,.16);
+  overflow: hidden;
+}
+
+.hero-banner.minimal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 120%, rgba(160,193,230,.2), transparent 60%);
+  opacity: .7;
+}
+
+.hero-banner.minimal h1 {
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+  letter-spacing: 0.06em;
+  margin: 0 0 .6rem;
+  text-transform: uppercase;
+}
+
+.hero-banner.minimal p {
+  font-size: 1.02rem;
+  color: var(--text-2);
+  margin: 0;
+  font-weight: 400;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.hero-banner.minimal span {
+  color: var(--md-primary-fg-color--light);
+}
+
+/* -----------------------------------------------------------
+   TITULOS SECUNDARIOS DESTACADOS (##)
+------------------------------------------------------------ */
+.md-content h2 {
+  text-align: center;
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: 2.4rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.md-content h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  border-radius: 999px;
+  margin: .55rem auto 0;
+  opacity: .8;
+}
+
+/* -----------------------------------------------------------
+   PÁRRAFOS DE CONTENIDO
+------------------------------------------------------------ */
+.md-content p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ==== Acciones: pill + botón, alineados y sin romper texto ==== */
+
+.cards-grid .card p.actions,
+.x-card p.actions {
+  margin-top: auto;             /* empuja las acciones hacia el fondo de la card */
+  padding-top: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;      /* pill + botón centrados horizontalmente */
+  gap: .6rem;
+  flex-wrap: nowrap;
+}
+
+/* Elementos dentro de actions: que no se achiquen ni se corten */
+.cards-grid .card p.actions .pill,
+.x-card p.actions .pill,
+.cards-grid .card p.actions a,
+.x-card p.actions a {
+  flex: 0 0 auto;          /* tamaño según contenido, sin shrink */
+  white-space: nowrap;     /* no romper por espacios */
+  overflow-wrap: normal;   /* anula break-word global */
+  word-break: keep-all;    /* no cortar palabra en mitad */
+}
+
+.card a.open-btn,
+.x-card a.open-btn,
+.cards-grid .card p.actions a.md-button.md-button--primary {
+  display: inline-block;
+  margin-top: .2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  color: #fff;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: .35rem 1rem;       /* un poco más compacto */
+  text-decoration: none;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, .18);
+  transform: translateY(0);
+  font-size: .88rem;
+  white-space: nowrap;
+}
+
+.cards-grid .card p.actions .pill,
+.x-card p.actions .pill,
+.cards-grid .card p.actions a,
+.x-card p.actions a {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+/* ============================================================
+   Tipografía específica dentro de las cards
+   ============================================================ */
+
+/* TÍTULO DE LA CARD */
+.cards-grid .card h3,
+.x-card h3 {
+  font-size: 1.08rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--md-primary-fg-color--dark);
+  letter-spacing: .015em;
+  margin-bottom: .35rem;
+}
+
+/* PRIMER PÁRRAFO DESPUÉS DEL TÍTULO = DESCRIPCIÓN PRINCIPAL */
+.cards-grid .card h3 + p,
+.x-card h3 + p {
+  font-size: .95rem;
+  line-height: 1.6;
+  color: var(--text-1);
+  margin-top: .15rem;
+  margin-bottom: .55rem;
+}
+
+/* RESTO DE PÁRRAFOS (por ejemplo, donde va el stack) */
+.cards-grid .card p:not(.actions) small,
+.x-card p:not(.actions) small {
+  display: block;
+  margin-top: .4rem;
+  font-size: .78rem !important;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  opacity: .85;
+}
+
+/* Stack aún más pequeño y sutil dentro de las cards */
+.cards-grid .card p:not(.actions) small,
+.x-card p:not(.actions) small {
+  display: block;
+  margin-top: .35rem;
+  font-size: .72rem !important;   /* más pequeño */
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  opacity: .7;                    /* más suave */
+}
+
+/* ============================================================
+   ANIMACIÓN PARA EL BOTÓN "ABRIR" DENTRO DE LAS CARDS
+   ============================================================ */
+
+/* Base del botón "Abrir" dentro de las cards */
+.cards-grid .card p.actions a.md-button.md-button--primary,
+.x-card p.actions a.md-button.md-button--primary {
+  position: relative;
+  overflow: hidden;              /* para que el brillo no se salga */
+  will-change: transform, box-shadow;
+  cursor: pointer;
+}
+
+/* “Luz” diagonal que recorre el botón */
+.cards-grid .card p.actions a.md-button.md-button--primary::before,
+.x-card p.actions a.md-button.md-button--primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,.55),
+    rgba(255,255,255,0)
+  );
+  transform: translateX(-130%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover del botón: leve zoom + brillo */
+.cards-grid .card p.actions a.md-button.md-button--primary:hover,
+.x-card p.actions a.md-button.md-button--primary:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 9px 20px rgba(0, 0, 0, .28),
+    0 0 14px var(--glow-primary);
+}
+
+.cards-grid .card p.actions a.md-button.md-button--primary:hover::before,
+.x-card p.actions a.md-button.md-button--primary:hover::before {
+  opacity: 1;
+  animation: btn-shine .6s ease-out;
+}
+
+/* Animación del brillo */
+@keyframes btn-shine {
+  0%   { transform: translateX(-130%); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateX(130%); opacity: 0; }
+}
+
+/* ============================================================
+   HOVER DE LAS CARDS (más profundidad y glow notorio)
+   ============================================================ */
+
+.x-card,
+.cards-grid .card {
+  will-change: transform, box-shadow, border-color;
+}
+
+/* Efecto visible al pasar el mouse sobre la card completa */
+.x-card:hover,
+.cards-grid .card:hover {
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(160,193,230,.6);
+  box-shadow:
+    0 18px 32px var(--shadow-1),
+    0 0 18px var(--glow-primary);
+}
+
+/* Aseguramos que el halo (::before) se vea en hover */
+.x-card:hover::before,
+.cards-grid .card:hover::before {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   AJUSTE DE JERARQUÍA TIPOGRÁFICA EN LAS CARDS
+   (para que el texto del portafolio sea más protagonista)
+   ============================================================ */
+
+/* Título dentro de la card: un poco más pequeño */
+.cards-grid .card h3,
+.x-card h3 {
+  font-size: .96rem;         /* antes ~1.08rem */
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+/* Descripción principal de la card (primer párrafo tras el h3) */
+.cards-grid .card h3 + p,
+.x-card h3 + p {
+  font-size: .86rem;         /* más pequeño que el body del portafolio */
+  line-height: 1.55;
+  color: var(--text-1);
+}
+
+/* Cualquier otro párrafo normal dentro de la card (excepto acciones) */
+.cards-grid .card p:not(.actions):not(:has(small)),
+.x-card p:not(.actions):not(:has(small)) {
+  font-size: .84rem;
+  line-height: 1.5;
+}
+
+/* Stack (meta-info) aún más discreto */
+.cards-grid .card p:not(.actions) small,
+.x-card p:not(.actions) small {
+  display: block;
+  margin-top: .3rem;
+  font-size: .7rem !important;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  opacity: .65;
+}
+
+/* ============================================================
+   Descripción introductoria de cada sección (debajo de los h2)
+   ============================================================ */
+
+/* Primer párrafo justo después de cada título de sección */
+.md-content h2 + p {
+  font-size: .9rem;            /* más pequeño que antes */
+  line-height: 1.6;
+  max-width: 900px;            /* opcional: limita el ancho para mejor lectura */
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-1);
+  opacity: .9;
+}
+
+/* ==== HERO MÁS GRANDE ==== */
+
+.hero.hero--portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.8rem;
+  padding: 3rem 3.2rem 3.3rem;  /* más alto y ancho */
+  margin: 0 0 2.8rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--md-primary-fg-color),
+    var(--md-accent-fg-color)
+  );
+  color: #fff;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.38);
+}
+
+.hero__content h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.1rem;     /* título más grande */
+}
+
+/* ==== BOTONES ORGANIZADOS Y VISIBLES ==== */
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.hero__actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+/* CTA principal */
+.hero__actions-row--main .md-button--primary {
+  padding-inline: 2.1rem;
+  font-weight: 600;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.5);
+}
+
+/* Botones secundarios: Acerca de mí / Descargar CV */
+.hero__actions-row--secondary .md-button {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+}
+
+.hero__actions-row--secondary .md-button:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ==== "CARPETAS" EN UNA SOLA FILA ==== */
+
+.hero__meta {
+  list-style: none;
+  padding: 0;
+  margin: 1.3rem 0 0;
+  display: flex;
+  flex-wrap: nowrap;     /* una sola fila en desktop */
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.hero__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.24);
+  white-space: nowrap;   /* que no se corten las frases */
+}
+
+/* En pantallas pequeñas permitimos que se rompan en varias filas */
+@media (max-width: 900px) {
+  .hero.hero--portfolio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero__meta {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===========================
+   HERO PORTAFOLIO (LAYOUT)
+   =========================== */
+
+.hero.hero--portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 3rem 3.2rem 3.3rem;
+  margin: 0 0 2.8rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--md-primary-fg-color),
+    var(--md-accent-fg-color)
+  );
+  color: #fff;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.38);
+}
+
+/* Columna izquierda (texto) */
+.hero.hero--portfolio .hero__content {
+  flex: 2;
+  min-width: 0;
+}
+
+.hero.hero--portfolio .hero__content h1 {
+  margin: 0 0 0.6rem;
+  font-size: 2.1rem;
+  line-height: 1.15;
+}
+
+/* Columna derecha (tarjetas) */
+.hero.hero--portfolio .hero__side {
+  flex: 1;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  align-self: stretch;
+  justify-content: center;
+}
+
+/* ===========================
+   TARJETAS DERECHA ("CUADRADOS")
+   =========================== */
+
+.hero.hero--portfolio .hero-chip {
+  padding: 0.95rem 1.15rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.35);
+}
+
+.hero.hero--portfolio .hero-chip__label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+.hero.hero--portfolio .hero-chip__value {
+  display: block;
+  margin-top: 0.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* ===========================
+   BOTONES ORDENADOS
+   =========================== */
+
+.hero.hero--portfolio .hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.hero.hero--portfolio .hero__actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+/* CTA principal */
+.hero.hero--portfolio .hero__actions-row--main .md-button--primary {
+  padding-inline: 2.1rem;
+  font-weight: 600;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.5);
+}
+
+/* Secundarios: Acerca de mí / CV */
+.hero.hero--portfolio .hero__actions-row--secondary .md-button {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+}
+
+.hero.hero--portfolio .hero__actions-row--secondary .md-button:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Pills de abajo en una fila limpia */
+.hero.hero--portfolio .hero__meta {
+  list-style: none;
+  padding: 0;
+  margin: 1.3rem 0 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.hero.hero--portfolio .hero__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.24);
+  white-space: nowrap;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+  .hero.hero--portfolio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero.hero--portfolio .hero__side {
+    max-width: none;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero.hero--portfolio .hero-chip {
+    flex: 1 1 220px;
+  }
+
+  .hero.hero--portfolio .hero__meta {
+    flex-wrap: wrap;
+  }
+}
+
+/* 1) Títulos y subtítulo un poco más grandes */
+
+.hero.hero--portfolio .hero__eyebrow {
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.9rem;       /* antes más chico */
+  opacity: 0.95;
+}
+
+.hero.hero--portfolio .hero__subtitle {
+  margin: 0 0 1.2rem;
+  max-width: 38rem;
+  font-size: 1.05rem;      /* un poco más grande */
+  opacity: 0.98;
+}
+
+/* 2) Centrar el bloque de botones y la fila secundaria */
+
+.hero.hero--portfolio .hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centra todo el grupo */
+  gap: 0.7rem;
+  margin-top: 1.7rem;
+}
+
+.hero.hero--portfolio .hero__actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;  /* centra cada fila */
+}
+
+.hero.hero--portfolio .hero__actions-row--main .md-button--primary {
+  padding-inline: 2.2rem;
+  font-weight: 600;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.5);
+}
+
+/* 3) Pills de abajo sin overflow del hero */
+
+.hero.hero--portfolio .hero__meta {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;          /* permite que bajen a segunda fila */
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  max-width: 100%;          /* no se pasan del contenedor */
+}
+
+.hero.hero--portfolio .hero__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.24);
+  white-space: normal;      /* deja que el texto se corte en varias líneas */
+}
+
+/* En pantallas grandes, limitamos un poco el ancho para que se vean ordenadas */
+@media (min-width: 900px) {
+  .hero.hero--portfolio .hero__meta {
+    max-width: 36rem;
+  }
+}
+
+/* Mantener "Portafolio académico · Ingeniería de Sistemas" en una sola línea en desktop */
+@media (min-width: 900px) {
+  .hero.hero--portfolio .hero__eyebrow {
+    white-space: nowrap;   /* no permite el salto de línea */
+  }
+}
+
+/* En pantallas pequeñas sí dejamos que se parta si hace falta */
+@media (max-width: 899px) {
+  .hero.hero--portfolio .hero__eyebrow {
+    white-space: normal;
+  }
+}
