@@ -220,11 +220,11 @@ Soy estudiante de **Ingeniería de Sistemas** con experiencia en **ventas técni
       <span class="contact-link__value">Luis Vaez Alvarez</span>
     </span>
   </a>
-  <a class="contact-link" href="https://github.com/vaezgaming1-afk" target="_blank" rel="noopener" aria-label="GitHub">
+  <a class="contact-link" href="https://github.com/lvaezx7" target="_blank" rel="noopener" aria-label="GitHub">
     <span class="contact-link__icon">💻</span>
     <span class="contact-link__info">
       <span class="contact-link__label">GitHub</span>
-      <span class="contact-link__value">vaezgaming1-afk</span>
+      <span class="contact-link__value">lvaezx7</span>
     </span>
   </a>
   <a class="contact-link" href="../assets/VAEZ ALVAREZ LUIS- CV[1].pdf" target="_blank" rel="noopener" aria-label="Descargar CV">

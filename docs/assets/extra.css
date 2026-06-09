@@ -462,6 +462,39 @@ code, pre, kbd { font-family: var(--font-mono) !important; }
   background: rgba(15, 23, 42, 0.04);
 }
 
+/* MkDocs overrides link color via .md-typeset a — force btn colors */
+.md-typeset a.btn--primary,
+.md-typeset a.btn--primary:hover,
+.md-typeset a.btn--primary:focus,
+.md-typeset a.btn--primary:visited {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.md-typeset a.btn--secondary,
+.md-typeset a.btn--secondary:hover,
+.md-typeset a.btn--secondary:visited {
+  color: var(--clr-primary) !important;
+  -webkit-text-fill-color: var(--clr-primary) !important;
+}
+
+.md-typeset a.btn--outline,
+.md-typeset a.btn--outline:visited {
+  color: rgba(148, 163, 184, 0.82) !important;
+  -webkit-text-fill-color: rgba(148, 163, 184, 0.82) !important;
+}
+
+.md-typeset a.btn--outline:hover {
+  color: var(--clr-text) !important;
+  -webkit-text-fill-color: var(--clr-text) !important;
+}
+
+[data-md-color-scheme="default"] .md-typeset a.btn--outline,
+[data-md-color-scheme="default"] .md-typeset a.btn--outline:visited {
+  color: var(--clr-text-2) !important;
+  -webkit-text-fill-color: var(--clr-text-2) !important;
+}
+
 /* MkDocs native buttons */
 a.md-button {
   display: inline-flex;

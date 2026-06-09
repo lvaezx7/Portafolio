@@ -259,15 +259,17 @@
     }, 100);
   }
 
-  // MkDocs Material: fires on instant navigation
-  document.addEventListener('DOMContentLoaded', boot);
-  document.addEventListener('DOMSwitch', boot); // MkDocs Material SPA navigation
-
-  // Fallback for MkDocs Material instant loading
+  // Initial load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
   } else {
     boot();
+  }
+
+  // MkDocs Material instant navigation — document$ is the RxJS observable
+  // exposed globally by MkDocs Material for SPA page changes
+  if (typeof document$ !== 'undefined') {
+    document$.subscribe(function () { boot(); });
   }
 
 })();

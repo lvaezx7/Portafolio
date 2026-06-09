@@ -90,11 +90,11 @@ description: "Portfolio de Luis Vaez Alvarez — AI & Data Science Engineer"
       <span class="contact-link__value">luis-váez-álvarez</span>
     </span>
   </a>
-  <a class="contact-link" href="https://github.com/vaezgaming1-afk" target="_blank" rel="noopener" aria-label="GitHub">
+  <a class="contact-link" href="https://github.com/lvaezx7" target="_blank" rel="noopener" aria-label="GitHub">
     <span class="contact-link__icon">💻</span>
     <span class="contact-link__info">
       <span class="contact-link__label">GitHub</span>
-      <span class="contact-link__value">vaezgaming1-afk</span>
+      <span class="contact-link__value">lvaezx7</span>
     </span>
   </a>
 </div>
