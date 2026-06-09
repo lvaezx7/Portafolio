@@ -1,6 +1,8 @@
 ---
 title: "Portfolio AI & Data Science"
 description: "30+ proyectos en Machine Learning, Deep Learning, Computer Vision, NLP y MLOps"
+hide:
+  - toc
 ---
 
 <!-- PAGE HERO -->
@@ -27,32 +29,6 @@ description: "30+ proyectos en Machine Learning, Deep Learning, Computer Vision,
 ---
 
 <!-- ================================================================
-     PUBLICACIÓN
-     ================================================================ -->
-
-<div class="domain-header reveal">
-  <span class="domain-header__icon">🌐</span>
-  <div class="domain-header__content">
-    <p class="domain-header__label">Infraestructura</p>
-    <p class="domain-header__title">Publicación del Portafolio</p>
-  </div>
-  <span class="domain-header__count">1</span>
-</div>
-
-<div class="cards-grid stagger-children">
-  <div class="card">
-    <h3>Publicación del portafolio</h3>
-    <p>MkDocs Material + GitHub Pages. Configuración de tema, navegación, assets y CI/CD con GitHub Actions.</p>
-    <p class="actions">
-      <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="1Publicacion">Abrir</a>
-    </p>
-  </div>
-</div>
-
----
-
-<!-- ================================================================
      DOMAIN 1: MACHINE LEARNING CLÁSICO
      ================================================================ -->
 
@@ -65,7 +41,7 @@ description: "30+ proyectos en Machine Learning, Deep Learning, Computer Vision,
   <span class="domain-header__count">15</span>
 </div>
 
-Ciclo completo: exploración y preparación de datos, modelado predictivo, validación cruzada, optimización de hiperparámetros y clustering. Stack: **Pandas · Scikit-learn · Seaborn · Matplotlib**.
+<p class="domain-desc">Ciclo completo: exploración y preparación de datos, modelado predictivo, validación cruzada, optimización de hiperparámetros y clustering. Stack: <strong>Pandas · Scikit-learn · Seaborn · Matplotlib</strong>.</p>
 
 <div class="cards-grid stagger-children">
 
@@ -75,7 +51,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Seaborn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica1/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica1/">Ver →</a>
     </p>
   </div>
 
@@ -85,7 +61,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Seaborn · Scipy</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica1.2/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica1.2/">Ver →</a>
     </p>
   </div>
 
@@ -95,7 +71,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Seaborn · Matplotlib</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica1.3/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica1.3/">Ver →</a>
     </p>
   </div>
 
@@ -105,7 +81,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn · Matplotlib</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica2/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica2/">Ver →</a>
     </p>
   </div>
 
@@ -115,7 +91,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn · Seaborn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica2.1/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica2.1/">Ver →</a>
     </p>
   </div>
 
@@ -125,7 +101,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Seaborn · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica2.2/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica2.2/">Ver →</a>
     </p>
   </div>
 
@@ -135,7 +111,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Seaborn · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica4/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica4/">Ver →</a>
     </p>
   </div>
 
@@ -145,7 +121,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Seaborn · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica4.1/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica4.1/">Ver →</a>
     </p>
   </div>
 
@@ -155,7 +131,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Seaborn · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica4.2/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica4.2/">Ver →</a>
     </p>
   </div>
 
@@ -165,7 +141,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica5/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica5/">Ver →</a>
     </p>
   </div>
 
@@ -175,7 +151,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica5.1/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica5.1/">Ver →</a>
     </p>
   </div>
 
@@ -185,7 +161,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica5.2/">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica5.2/">Ver →</a>
     </p>
   </div>
 
@@ -195,7 +171,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn · PCA · K-Means</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica6">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica6">Ver →</a>
     </p>
   </div>
 
@@ -205,7 +181,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn · PCA · K-Means</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica6.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica6.1">Ver →</a>
     </p>
   </div>
 
@@ -215,7 +191,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
     <p><small>Stack: Python · Pandas · Scikit-learn · PCA · K-Means</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica6.2">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica6.2">Ver →</a>
     </p>
   </div>
 
@@ -236,7 +212,7 @@ Ciclo completo: exploración y preparación de datos, modelado predictivo, valid
   <span class="domain-header__count">6</span>
 </div>
 
-MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularización y análisis con TensorBoard. Stack: **PyTorch · TensorFlow · Keras · TensorBoard**.
+<p class="domain-desc">MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularización y análisis con TensorBoard. Stack: <strong>PyTorch · TensorFlow · Keras · TensorBoard</strong>.</p>
 
 <div class="cards-grid stagger-children">
 
@@ -246,7 +222,7 @@ MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularizac
     <p><small>Stack: Python · Scikit-learn · TensorFlow · Keras</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica7">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica7">Ver →</a>
     </p>
   </div>
 
@@ -256,7 +232,7 @@ MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularizac
     <p><small>Stack: Python · TensorFlow · Keras · Matplotlib</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica7.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica7.1">Ver →</a>
     </p>
   </div>
 
@@ -266,7 +242,7 @@ MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularizac
     <p><small>Stack: Python · TensorFlow · Keras · Matplotlib</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica7.2">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica7.2">Ver →</a>
     </p>
   </div>
 
@@ -276,7 +252,7 @@ MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularizac
     <p><small>Stack: Python · TensorFlow · Keras · TensorBoard</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica8">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica8">Ver →</a>
     </p>
   </div>
 
@@ -286,7 +262,7 @@ MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularizac
     <p><small>Stack: Python · TensorFlow · Keras · TensorBoard</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica8.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica8.1">Ver →</a>
     </p>
   </div>
 
@@ -296,7 +272,7 @@ MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularizac
     <p><small>Stack: Python · TensorFlow · Keras · TensorBoard</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica8.2">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica8.2">Ver →</a>
     </p>
   </div>
 
@@ -317,7 +293,7 @@ MLP, CNN, activaciones, backpropagation, optimizadores (SGD, AdamW), regularizac
   <span class="domain-header__count">8</span>
 </div>
 
-CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo real con YOLOv8 y segmentación con SAM. Stack: **PyTorch · TensorFlow · YOLOv8 · SAM · Albumentations · OpenCV**.
+<p class="domain-desc">CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo real con YOLOv8 y segmentación con SAM. Stack: <strong>PyTorch · TensorFlow · YOLOv8 · SAM · Albumentations · OpenCV</strong>.</p>
 
 <div class="cards-grid stagger-children">
 
@@ -327,7 +303,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · TensorFlow · Keras</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica9">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica9">Ver →</a>
     </p>
   </div>
 
@@ -337,7 +313,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · TensorFlow · Keras · TFDS</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica9.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica9.1">Ver →</a>
     </p>
   </div>
 
@@ -347,7 +323,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · TensorFlow · Keras · TFDS</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica10">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica10">Ver →</a>
     </p>
   </div>
 
@@ -357,7 +333,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · TensorFlow · Keras · TFDS</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica10.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica10.1">Ver →</a>
     </p>
   </div>
 
@@ -367,7 +343,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · Ultralytics YOLOv8 · OpenCV · Norfair</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica11">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica11">Ver →</a>
     </p>
   </div>
 
@@ -377,7 +353,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · Ultralytics YOLOv8 · OpenCV · Norfair</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica11.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica11.1">Ver →</a>
     </p>
   </div>
 
@@ -387,7 +363,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · PyTorch · SAM · Albumentations</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica12">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica12">Ver →</a>
     </p>
   </div>
 
@@ -397,7 +373,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
     <p><small>Stack: Python · PyTorch · SAM · Albumentations</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica12.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica12.1">Ver →</a>
     </p>
   </div>
 
@@ -418,7 +394,7 @@ CNNs, transfer learning SOTA, data augmentation, GradCAM, detección en tiempo r
   <span class="domain-header__count">6</span>
 </div>
 
-TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de agentes con LangGraph. Stack: **HuggingFace · LangChain · LangGraph · OpenAI API · FAISS**.
+<p class="domain-desc">TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de agentes con LangGraph. Stack: <strong>HuggingFace · LangChain · LangGraph · OpenAI API · FAISS</strong>.</p>
 
 <div class="cards-grid stagger-children">
 
@@ -428,7 +404,7 @@ TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de age
     <p><small>Stack: Python · HuggingFace · Transformers · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica13">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica13">Ver →</a>
     </p>
   </div>
 
@@ -438,7 +414,7 @@ TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de age
     <p><small>Stack: Python · HuggingFace · Transformers · Scikit-learn</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica13.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica13.1">Ver →</a>
     </p>
   </div>
 
@@ -448,7 +424,7 @@ TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de age
     <p><small>Stack: Python · LangChain · OpenAI · LangSmith</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica14">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica14">Ver →</a>
     </p>
   </div>
 
@@ -458,7 +434,7 @@ TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de age
     <p><small>Stack: Python · LangChain · OpenAI · FAISS</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica14.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica14.1">Ver →</a>
     </p>
   </div>
 
@@ -468,7 +444,7 @@ TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de age
     <p><small>Stack: Python · LangGraph · LangChain · OpenAI</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica15">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica15">Ver →</a>
     </p>
   </div>
 
@@ -478,7 +454,7 @@ TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de age
     <p><small>Stack: Python · LangGraph · OpenAI · FAISS · HuggingFace</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica15.1">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica15.1">Ver →</a>
     </p>
   </div>
 
@@ -499,7 +475,7 @@ TF-IDF, BERT, RoBERTa, fine-tuning, LangChain, FAISS, RAG y arquitecturas de age
   <span class="domain-header__count">1</span>
 </div>
 
-CI/CD/CT para ML, Vertex AI Pipelines, Model Registry, endpoints online, monitoreo de data drift y gestión de deuda técnica. Stack: **Vertex AI · AutoMLOps · Google Cloud Platform**.
+<p class="domain-desc">CI/CD/CT para ML, Vertex AI Pipelines, Model Registry, endpoints online, monitoreo de data drift y gestión de deuda técnica. Stack: <strong>Vertex AI · AutoMLOps · Google Cloud Platform</strong>.</p>
 
 <div class="cards-grid stagger-children">
 
@@ -509,7 +485,7 @@ CI/CD/CT para ML, Vertex AI Pipelines, Model Registry, endpoints online, monitor
     <p><small>Stack: Python · AutoMLOps · Vertex AI Pipelines · Model Monitoring</small></p>
     <p class="actions">
       <span class="pill">Completado</span>
-      <a class="md-button md-button--primary" href="Practica16">Abrir</a>
+      <a class="md-button md-button--primary" href="Practica16">Ver →</a>
     </p>
   </div>
 

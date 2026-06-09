@@ -1,8 +1,6 @@
 site_name: Luis Vaez · AI Portfolio
 site_description: Portfolio de AI & Data Science — Machine Learning, Deep Learning, Computer Vision, NLP y MLOps
 site_url: https://lvaezx7.github.io/Portafolio/
-repo_url: https://github.com/lvaezx7/Portafolio
-repo_name: ia-portfolio
 site_dir: site
 docs_dir: docs
 
@@ -12,7 +10,7 @@ theme:
   logo: assets/logo.svg
   favicon: assets/logo.svg
   font:
-    text: Inter
+    text: DM Sans
     code: JetBrains Mono
   features:
     - navigation.instant
@@ -21,23 +19,11 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
-    - toc.integrate
     - content.code.copy
-    - search.highlight
-    - search.suggest
   palette:
     - scheme: slate
       primary: custom
       accent: custom
-      toggle:
-        icon: material/weather-sunny
-        name: Cambiar a modo claro
-    - scheme: default
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/weather-night
-        name: Cambiar a modo oscuro
 
 extra_css:
   - assets/extra.css
@@ -46,7 +32,6 @@ extra_javascript:
   - assets/extra.js
 
 plugins:
-  - search
   - awesome-pages
   - macros
   - git-revision-date-localized:

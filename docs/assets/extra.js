@@ -17,9 +17,9 @@
 
     const ctx = canvas.getContext('2d');
     let W, H, nodes, RAF;
-    const NODE_COUNT = 55;
-    const MAX_DIST   = 145;
-    const NODE_SPEED = 0.45;
+    const NODE_COUNT = 80;
+    const MAX_DIST   = 160;
+    const NODE_SPEED = 0.4;
 
     function isDark() {
       return document.documentElement.getAttribute('data-md-color-scheme') === 'slate';
@@ -229,7 +229,74 @@
   }
 
   /* -------------------------------------------------------------------------
-     MODULE 6: CARD STAGGER ON LOAD
+     MODULE 6: HERO EFFECTS — parallax, cursor glow, float panels
+     ------------------------------------------------------------------------- */
+
+  function initHeroEffects() {
+    const hero   = document.querySelector('.hero-v2');
+    const inner  = document.querySelector('.hero-v2__inner');
+    const floats = document.querySelectorAll('.hero-float');
+    if (!hero || !inner) return;
+
+    // Inject cursor glow element (once)
+    let glow = hero.querySelector('.hero-cursor-glow');
+    if (!glow) {
+      glow = document.createElement('div');
+      glow.className = 'hero-cursor-glow';
+      hero.appendChild(glow);
+    }
+
+    let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+    let rafId;
+
+    hero.addEventListener('mousemove', function (e) {
+      const rect = hero.getBoundingClientRect();
+      const cx   = rect.width  / 2;
+      const cy   = rect.height / 2;
+      const dx   = (e.clientX - rect.left - cx) / cx; // -1 … 1
+      const dy   = (e.clientY - rect.top  - cy) / cy; // -1 … 1
+
+      targetX = dx * -10;
+      targetY = dy * -8;
+
+      // Cursor glow follows mouse exactly
+      glow.style.opacity = '1';
+      glow.style.left    = (e.clientX - rect.left) + 'px';
+      glow.style.top     = (e.clientY - rect.top)  + 'px';
+
+      // Float panels: left moves with mouse, right moves opposite
+      floats.forEach(function (f, i) {
+        const sign = i === 0 ? 1 : -1;
+        f.style.transform = 'translateY(-50%) translate(' +
+          (dx * sign * 14) + 'px,' +
+          (dy * 8) + 'px)';
+      });
+    });
+
+    hero.addEventListener('mouseleave', function () {
+      targetX = 0;
+      targetY = 0;
+      glow.style.opacity = '0';
+      floats.forEach(function (f) {
+        f.style.transform = 'translateY(-50%)';
+      });
+    });
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function animate() {
+      currentX = lerp(currentX, targetX, 0.08);
+      currentY = lerp(currentY, targetY, 0.08);
+      inner.style.transform = 'translate(' + currentX + 'px,' + currentY + 'px)';
+      rafId = requestAnimationFrame(animate);
+    }
+
+    if (rafId) cancelAnimationFrame(rafId);
+    animate();
+  }
+
+  /* -------------------------------------------------------------------------
+     MODULE 8: CARD STAGGER ON LOAD
      Adds stagger reveal to all .cards-grid instances
      ------------------------------------------------------------------------- */
 
@@ -240,16 +307,36 @@
   }
 
   /* -------------------------------------------------------------------------
+     MODULE 9: PAGE CLASS — marks home page with .is-home on body
+     Enables CSS overrides like hiding the sparse "Inicio" sidebar
+     ------------------------------------------------------------------------- */
+
+  function markPage() {
+    const path = location.pathname;
+    const isHome = path.endsWith('/Portafolio/') ||
+                   path.endsWith('/Portafolio/index.html') ||
+                   path === '/' ||
+                   path === '/index.html';
+    if (isHome) {
+      document.body.classList.add('is-home');
+    } else {
+      document.body.classList.remove('is-home');
+    }
+  }
+
+  /* -------------------------------------------------------------------------
      INIT — run after DOM ready, re-run on MkDocs page navigation
      ------------------------------------------------------------------------- */
 
   function boot() {
+    markPage();
     initNeuralCanvas();
     initTypewriter();
     initCounters();
     initScrollReveal();
     initSkillBars();
     initCardStagger();
+    initHeroEffects();
     // Re-trigger scroll reveal immediately for above-fold elements
     setTimeout(() => {
       document.querySelectorAll('.reveal, .stagger-children').forEach(el => {
