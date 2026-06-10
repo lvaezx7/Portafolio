@@ -154,7 +154,7 @@
      ------------------------------------------------------------------------- */
 
   function initCounters() {
-    const nums = document.querySelectorAll('.stat-item__num[data-target]');
+    const nums = document.querySelectorAll('.stat-item__num[data-target], .phc-stat__num[data-target]');
     if (!nums.length) return;
 
     const observed = new Set();
@@ -296,6 +296,52 @@
   }
 
   /* -------------------------------------------------------------------------
+     MODULE 7: PORTFOLIO PAGE EFFECTS
+     — domain section watermark numbers
+     — portfolio hero card cursor glow
+     — phc-stat stagger entrance
+     ------------------------------------------------------------------------- */
+
+  function initPortfolioEffects() {
+    // 1. Inject watermark number into each domain section
+    document.querySelectorAll('.domain-section').forEach(function (section) {
+      if (section.querySelector('.domain-section__watermark')) return;
+      var numEl = section.querySelector('.domain-section__number');
+      if (!numEl) return;
+      var wm = document.createElement('span');
+      wm.className = 'domain-section__watermark';
+      wm.setAttribute('aria-hidden', 'true');
+      wm.textContent = numEl.textContent.trim();
+      section.insertBefore(wm, section.firstChild);
+    });
+
+    // 2. Portfolio hero card cursor-tracking radial glow
+    var phc = document.querySelector('.portfolio-hero-card');
+    if (phc) {
+      phc.addEventListener('mousemove', function (e) {
+        var rect = phc.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1);
+        var y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1);
+        phc.style.setProperty('--mx', x + '%');
+        phc.style.setProperty('--my', y + '%');
+        phc.style.backgroundImage =
+          'radial-gradient(circle 350px at ' + x + '% ' + y + '%, rgba(34,211,238,0.07) 0%, transparent 70%), ' +
+          'linear-gradient(135deg, rgba(8,14,28,0.97) 0%, rgba(4,9,20,0.99) 100%)';
+      });
+      phc.addEventListener('mouseleave', function () {
+        phc.style.backgroundImage = '';
+      });
+    }
+
+    // 3. Stagger entrance on phc-stat boxes
+    var stats = document.querySelectorAll('.phc-stat');
+    stats.forEach(function (s, i) {
+      s.style.animationDelay = (i * 0.08) + 's';
+      s.style.animation = 'phc-stat-in 0.5s both ' + (i * 0.08) + 's';
+    });
+  }
+
+  /* -------------------------------------------------------------------------
      MODULE 8: CARD STAGGER ON LOAD
      Adds stagger reveal to all .cards-grid instances
      ------------------------------------------------------------------------- */
@@ -337,6 +383,7 @@
     initSkillBars();
     initCardStagger();
     initHeroEffects();
+    initPortfolioEffects();
     // Re-trigger scroll reveal immediately for above-fold elements
     setTimeout(() => {
       document.querySelectorAll('.reveal, .stagger-children').forEach(el => {

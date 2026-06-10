@@ -17,23 +17,23 @@ hide:
   </p>
   <div class="portfolio-hero-card__stats">
     <a class="phc-stat" href="#domain-01">
-      <span class="phc-stat__num">15</span>
+      <span class="phc-stat__num" data-target="15">15</span>
       <span class="phc-stat__label">ML Clásico</span>
     </a>
     <a class="phc-stat" href="#domain-02">
-      <span class="phc-stat__num">6</span>
+      <span class="phc-stat__num" data-target="6">6</span>
       <span class="phc-stat__label">Deep Learning</span>
     </a>
     <a class="phc-stat" href="#domain-03">
-      <span class="phc-stat__num">8</span>
+      <span class="phc-stat__num" data-target="8">8</span>
       <span class="phc-stat__label">Computer Vision</span>
     </a>
     <a class="phc-stat" href="#domain-04">
-      <span class="phc-stat__num">6</span>
+      <span class="phc-stat__num" data-target="6">6</span>
       <span class="phc-stat__label">NLP & LLMs</span>
     </a>
     <a class="phc-stat" href="#domain-05">
-      <span class="phc-stat__num">1</span>
+      <span class="phc-stat__num" data-target="1">1</span>
       <span class="phc-stat__label">MLOps</span>
     </a>
   </div>
